@@ -87,37 +87,18 @@ document.querySelectorAll('.app-card, .stat').forEach(el => {
     observer.observe(el);
 });
 
-// Contact Form Handling
+// Contact Form Handling with FormSubmit
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Basic validation
-    if (!name || !email || !message) {
-        showFormMessage('Please fill in all fields.', 'error');
-        return;
+// Check if redirected back with success message
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        showFormMessage('Thank you for your message! We\'ll get back to you soon.', 'success');
+        // Clean up URL
+        window.history.replaceState({}, document.title, window.location.pathname + '#contact');
     }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showFormMessage('Please enter a valid email address.', 'error');
-        return;
-    }
-
-    // Simulate form submission (in production, this would send to a backend)
-    showFormMessage('Thank you for your message! We\'ll get back to you soon.', 'success');
-    contactForm.reset();
-
-    // In a real application, you would send this data to a backend API
-    console.log('Form submitted:', { name, email, message });
 });
 
 function showFormMessage(message, type) {
