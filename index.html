@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jade Comet - Building innovative mobile apps for fitness and education">
+    <title>Jade Comet | Mobile App Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Jade Comet</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#apps" class="nav-link">Apps</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Building the Future of Mobile Apps</h2>
+                <p class="hero-subtitle">Innovative solutions for fitness tracking and language learning</p>
+                <a href="#apps" class="cta-button">Explore Our Apps</a>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="apps-section">
+        <div class="container">
+            <h2 class="section-title">Our Apps</h2>
+            <div class="apps-grid">
+                <!-- Track Tribe -->
+                <div class="app-card" data-app="track-tribe">
+                    <div class="app-icon track-tribe-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="#FF6B6B"/>
+                            <path d="M 30 50 L 45 65 L 70 35" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="app-title">Track Tribe</h3>
+                    <p class="app-category">Fitness & Running</p>
+                    <p class="app-description">Join the tribe of runners! Track your runs, compete on leaderboards, and connect with a community of fitness enthusiasts. Challenge yourself and others to reach new personal bests.</p>
+                    <div class="app-features">
+                        <span class="feature-tag">GPS Tracking</span>
+                        <span class="feature-tag">Leaderboards</span>
+                        <span class="feature-tag">Social</span>
+                        <span class="feature-tag">Analytics</span>
+                    </div>
+                    <button class="app-button">Coming Soon</button>
+                </div>
+
+                <!-- Poly Panda -->
+                <div class="app-card" data-app="poly-panda">
+                    <div class="app-icon poly-panda-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="#4ECDC4"/>
+                            <circle cx="35" cy="40" r="8" fill="white"/>
+                            <circle cx="65" cy="40" r="8" fill="white"/>
+                            <circle cx="35" cy="40" r="4" fill="#333"/>
+                            <circle cx="65" cy="40" r="4" fill="#333"/>
+                            <path d="M 35 60 Q 50 70 65 60" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="app-title">Poly Panda</h3>
+                    <p class="app-category">Education & Languages</p>
+                    <p class="app-description">Learn languages the fun way! Master new languages with an adorable panda companion. Interactive lessons, gamified learning, and real-world conversations to help you become multilingual.</p>
+                    <div class="app-features">
+                        <span class="feature-tag">Multiple Languages</span>
+                        <span class="feature-tag">Gamified</span>
+                        <span class="feature-tag">Interactive</span>
+                        <span class="feature-tag">Progress Tracking</span>
+                    </div>
+                    <button class="app-button">Coming Soon</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Jade Comet</h2>
+            <div class="about-content">
+                <p>At Jade Comet, we're passionate about creating mobile experiences that make a difference. Our mission is to build apps that inspire, connect, and empower users around the world.</p>
+                <p>From fitness enthusiasts tracking their personal records to language learners expanding their horizons, we create tools that help people achieve their goals and unlock their potential.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>2</h3>
+                        <p>Apps in Development</p>
+                    </div>
+                    <div class="stat">
+                        <h3>∞</h3>
+                        <p>Possibilities</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Commitment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="contact-subtitle">Interested in our apps or want to collaborate? We'd love to hear from you!</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            <div class="form-message" id="formMessage"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Jade Comet LLC. All rights reserved.</p>
+            <p>Building innovative mobile experiences.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
