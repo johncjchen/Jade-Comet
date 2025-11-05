@@ -122,7 +122,13 @@
         <div class="container">
             <h2 class="section-title">Get in Touch</h2>
             <p class="contact-subtitle">Interested in our apps or want to collaborate? We'd love to hear from you!</p>
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/john@jadecomet.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New contact form submission from Jade Comet website">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://johncjchen.github.io/Jade-Comet/#contact?success=true">
+
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
                 </div>
