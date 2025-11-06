@@ -132,17 +132,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add animation to CTA button
-const ctaButton = document.querySelector('.cta-button');
-if (ctaButton) {
-    setInterval(() => {
-        ctaButton.style.animation = 'none';
-        setTimeout(() => {
-            ctaButton.style.animation = '';
-        }, 10);
-    }, 3000);
-}
-
 // Console message
 console.log('%c🚀 Jade Comet', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%cBuilding the future of mobile apps', 'font-size: 14px; color: #6b7280;');
