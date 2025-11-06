@@ -748,7 +748,7 @@ body::after {
     width: 100px;
     height: 2px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: translateX(-100px) rotate(-45deg);
+    transform: translateX(-100px) rotate(135deg);
     transform-origin: right center;
 }
 
