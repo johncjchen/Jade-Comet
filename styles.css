@@ -29,6 +29,39 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(52, 211, 153, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 80%, rgba(5, 150, 105, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 70%, rgba(110, 231, 183, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%);
+    z-index: -2;
+    filter: url(#jade-noise);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 60% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 30% 60%, rgba(52, 211, 153, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 70% 80%, rgba(5, 150, 105, 0.04) 0%, transparent 40%);
+    z-index: -1;
+    animation: jadeFlow 30s ease-in-out infinite;
 }
 
 .container {
@@ -127,19 +160,42 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #10b981 0%, #059669 30%, #6ee7b7 70%, #34d399 100%);
-    opacity: 0.15;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(16, 185, 129, 0.3) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 60%, rgba(52, 211, 153, 0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 80%, rgba(5, 150, 105, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 30%, rgba(110, 231, 183, 0.15) 0%, transparent 45%),
+        radial-gradient(ellipse at 10% 70%, rgba(16, 185, 129, 0.18) 0%, transparent 55%),
+        linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(52, 211, 153, 0.05) 100%);
     z-index: -1;
+    animation: jadeDrift 25s ease-in-out infinite;
 }
 
 .hero-background::before {
     content: '';
     position: absolute;
+    top: -50%;
+    left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: moveBackground 20s linear infinite;
+    background:
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.4) 0%, transparent 30%),
+        radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 25%),
+        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.2) 0%, transparent 35%);
+    filter: blur(40px);
+    animation: jadeSwirl 40s linear infinite;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 25% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+        radial-gradient(ellipse at 75% 50%, rgba(52, 211, 153, 0.12) 0%, transparent 40%);
+    filter: blur(60px);
+    animation: jadePulse 20s ease-in-out infinite;
 }
 
 @keyframes moveBackground {
@@ -148,6 +204,52 @@ body {
     }
     100% {
         transform: translate(50px, 50px);
+    }
+}
+
+@keyframes jadeFlow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+    }
+    33% {
+        opacity: 0.8;
+        transform: scale(1.1) translate(-10px, 10px);
+    }
+    66% {
+        opacity: 0.9;
+        transform: scale(1.05) translate(10px, -5px);
+    }
+}
+
+@keyframes jadeDrift {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-20px, 15px) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@keyframes jadeSwirl {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(50px, 50px) rotate(360deg);
+    }
+}
+
+@keyframes jadePulse {
+    0%, 100% {
+        opacity: 1;
+        filter: blur(60px);
+    }
+    50% {
+        opacity: 0.7;
+        filter: blur(80px);
     }
 }
 
@@ -209,6 +311,21 @@ body {
 .apps-section {
     padding: 100px 20px;
     background: var(--bg-light);
+    position: relative;
+}
+
+.apps-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 15% 25%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 75%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .section-title {
@@ -216,6 +333,8 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-dark);
+    position: relative;
+    z-index: 1;
 }
 
 .apps-grid {
@@ -223,6 +342,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
     margin-top: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .app-card {
@@ -334,12 +455,29 @@ body {
 .about-section {
     padding: 100px 20px;
     background: var(--bg-white);
+    position: relative;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(52, 211, 153, 0.03) 0%, transparent 55%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .about-content p {
@@ -390,6 +528,21 @@ body {
 .contact-section {
     padding: 100px 20px;
     background: var(--bg-light);
+    position: relative;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 25% 40%, rgba(16, 185, 129, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 60%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .contact-subtitle {
@@ -397,11 +550,15 @@ body {
     font-size: 1.2rem;
     color: var(--text-light);
     margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .form-group {
